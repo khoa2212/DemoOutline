@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Demo emp management</p>
+      <div class="items" id="items"></div>
+    </div>
+
+    <script>
+      const features = [
+        "Login",
+        "Sign Up + send email verify",
+        "Crud employee + paginated employee list",
+        "Search employee by name + filter employee by department",
+        "View and and update detail employee",
+        "Export excel project report",
+        "Export and zip all pdf files about employee profiles"
+      ];
+      features.forEach((feat, index) => {
+        const t = document.createElement("template");
+        t.innerHTML = `
+        <div class="checkbox-wrapper-1">
+          <input
+            id="example-${index}"
+            class="substituted"
+            type="checkbox"
+          />
+          <label for="example-${index}">${feat}</label>
+        </div>
+        `;
+        document.getElementById("items").appendChild(t.content);
+      });
+    </script>
+  </body>
+</html>
